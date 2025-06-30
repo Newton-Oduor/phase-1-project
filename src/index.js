@@ -26,17 +26,25 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
 function fetchLyrics(artist, song) {
     const apiurl = `https://api.lyrics.ovh/v1/${artist}/${song}`;
 
+    // Make the request from API and display lyrics, 
     fetch(apiurl)
       .then(response => response.json())
       .then(data => {
         if (data.lyrics) {
             displayLyrics(data.lyrics);
         } else {
-          displayLyrics("Lyrics for this song not available")
+          displayLyrics("Lyrics for this song not available") // If not found, display lyrics not found
         }
       })
       .catch(error => {
         console.error("Error fetching Lyrics", error);
-        displayLyrics("An error occured while fetching lyrics");
+        displayLyrics("An error occured while fetching lyrics"); // Catch any error during the process and display error message
       });
+}
+
+// Function to display lyrics & hide most popular section
+function displayLyrics(lyricsText) {
+    document.getelementbyid("most-popular").classList.add("hidden"); // Hide most popular section
+    document.getelementbyid("most-popular").classList.remove("hidden"); // Show lyrics section
+    document.getElementById("lyrics-display").innerText = lyricsText; // Display the fetched lyrics
 }
