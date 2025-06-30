@@ -48,3 +48,17 @@ function displayLyrics(lyricsText) {
     document.getelementbyid("lyrics-section").classList.remove("hidden"); // Show lyrics section
     document.getElementById("lyrics-display").innerText = lyricsText; // Display the fetched lyrics
 }
+
+// Add event listener to make all popular songs clickable
+document.querySelectorAll("#most-popular li").forEach((songItem) => {
+  songItem.addEventListener("click", () => {
+    // You can customize this part: For now, assume each <li> has text like "1. Changes - Tupac"
+    const text = songItem.innerText;
+    const lines = text.split("\n");
+    if (lines.length >= 2) {
+      const title = lines[0].replace(/^\d+\.\s*/, ""); // Remove numbering like "1. "
+      const artist = lines[1];
+      fetchLyrics(artist, title);
+    }
+  });
+});
