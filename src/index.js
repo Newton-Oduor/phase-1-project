@@ -52,13 +52,31 @@ function displayLyrics(lyricsText) {
 // Add event listener to make all popular songs clickable
 document.querySelectorAll("#most-popular li").forEach((songItem) => {
   songItem.addEventListener("click", () => {
-    // You can customize this part: For now, assume each <li> has text like "1. Changes - Tupac"
+    
     const text = songItem.innerText;
     const lines = text.split("\n");
     if (lines.length >= 2) {
-      const title = lines[0].replace(/^\d+\.\s*/, ""); // Remove numbering like "1. "
+      const title = lines[0].replace(/^\d+\.\s*/, ""); // Remove numbering like "1. " (Regex & replacement string)
       const artist = lines[1];
       fetchLyrics(artist, title);
     }
   });
+});
+
+// Event listener to add song/artist to playlist display
+document.getElementById("add-to-playlist").addEventListener("click", () => {
+    const playlistInput = document.getElementById("playlist-input");
+    const newItemText = playlistInput.value.trim();
+
+    // Check if user typed, create a new list and add item
+    if (newItemText) {
+        const newLi = document.createElement("li");
+        newLi.innerText = newItemText;
+        document.getElementById("playlist-display").appendChild(newLi);
+
+        // Clear input field after adding or show message if input was empty
+        playlistInput.value = "";
+    } else {
+        alert("Please enter a song or artist name before adding to playlist")
+    }
 });
