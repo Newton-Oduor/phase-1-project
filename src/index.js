@@ -22,3 +22,21 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
     document.getElementById("song-input").value = "";
 });
 
+// function to fetch lyrics from API and show them on the web page
+function fetchLyrics(artist, song) {
+    const apiurl = `https://api.lyrics.ovh/v1/${artist}/${song}`;
+
+    fetch(apiurl)
+      .then(response => response.json())
+      .then(data => {
+        if (data.lyrics) {
+            displayLyrics(data.lyrics);
+        } else {
+          displayLyrics("Lyrics for this song not available")
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching Lyrics", error);
+        displayLyrics("An error occured while fetching lyrics");
+      });
+}
