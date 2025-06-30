@@ -37,9 +37,7 @@ View Musiqale on GitHub Pages:
 
 ## 🧱 Project File Structure
 
-pgsql
-
-```javascript
+```pgsql
 ├── index.html
 ├── src
 │   └── index.js
