@@ -79,12 +79,14 @@ JavaScript (Vanilla) - Interactivity and API calls
 Git / GitHub - Version control and deployment
 
 ## ✅ Tailwind CSS Setup
+
 This project uses the Tailwind CDN link for styling.
-No installation needed. Included in the <head> of index.html like this:
+No installation needed. Included in the `<head>` of index.html like this:
 
 ```html
 <script src="https://cdn.tailwindcss.com"></script>
 ```
+
 For more on Tailwind:
 [https://tailwindcss.com/docs/installation/play-cdn](https://tailwindcss.com/docs/installation/play-cdn)
 
@@ -101,11 +103,13 @@ For more on Tailwind:
 * Improve error handling with custom messages and animations
 
 ## 📜 License
+
 *This project is licensed under the MIT License.
 Feel free to fork and improve it.*
 
-📝 Acknowledgments
-[Lyrics.ovh API](https://api.lyrics.ovh/v1/) 
+## 📝Acknowledgments
+
+[Lyrics.ovh API](https://api.lyrics.ovh/v1/)
 
 [Tailwind CSS](https://cdn.tailwindcss.com)
 
@@ -113,5 +117,7 @@ Feel free to fork and improve it.*
 
 [Emojipedia](https://emojipedia.org/)
 
+* Special thanks to Moringa School Instructors & Flatiron School for the project guidelines.
+
 _**Author**_
-*Newton Oduor*
+[*Newton Oduor*](https://github.com/Newton-Oduor)
