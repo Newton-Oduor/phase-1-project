@@ -80,3 +80,19 @@ document.getElementById("add-to-playlist").addEventListener("click", () => {
         alert("Please enter a song or artist name before adding to playlist")
     }
 });
+
+// Function to rotate cover image
+const coverImages = [
+  "rotating covers/cover1.jpg",
+  "rotating covers/cover2.jpg",
+  "rotating covers/cover3.jpg"
+];
+let currentCover = 0;
+
+function rotateCoverImage() {
+  currentCover = (currentCover + 1) % coverImages.length;
+  document.getElementById("cover-image").src = coverImages[currentCover];
+}
+
+// Rotate images every 5 seconds (5000ms)
+setInterval(rotateCoverImage, 5000); 
