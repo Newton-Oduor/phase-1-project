@@ -52,19 +52,19 @@ View Musiqale on GitHub Pages:
 
 ## Setup Instructions
 
-1. Clone this repository:
+1., Clone this repository:
 
 ```bash
 git clone [git@github.com:Newton-Oduor/phase-1-project.git](git@github.com:Newton-Oduor/phase-1-project.git)
 ```
 
-2. Open the project folder in VS Code or any code editor.
+2., Open the project folder in VS Code or any code editor.
 
-3. Start a live server or open index.html directly in your browser.
+3., Start a live server or open index.html directly in your browser.
 
-4. Ensure your internet connection works (Tailwind CDN and Lyrics API require it).
+4., Ensure your internet connection works (Tailwind CDN and Lyrics API require it).
 
-5. You can deploy the project on GitHub Pages for grading.
+5., You can deploy the project on GitHub Pages for grading.
 
 ## 💻 Technologies Used
 
@@ -115,5 +115,5 @@ Feel free to fork and improve it.*
 
 * Special thanks to Moringa School Instructors & Flatiron School for the project guidelines.
 
-_**Author**_
+**Author**
 [*Newton Oduor*](https://github.com/Newton-Oduor)
