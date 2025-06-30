@@ -45,6 +45,6 @@ function fetchLyrics(artist, song) {
 // Function to display lyrics & hide most popular section
 function displayLyrics(lyricsText) {
     document.getelementbyid("most-popular").classList.add("hidden"); // Hide most popular section
-    document.getelementbyid("most-popular").classList.remove("hidden"); // Show lyrics section
+    document.getelementbyid("lyrics-section").classList.remove("hidden"); // Show lyrics section
     document.getElementById("lyrics-display").innerText = lyricsText; // Display the fetched lyrics
 }
