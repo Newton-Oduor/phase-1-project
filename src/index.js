@@ -1,3 +1,16 @@
+// Code to wait for the entire HTML to be ready before running JS
+document.addEventListener('DOMContentLoaded', () => {
+  
+  console.log('DOM fully loaded and parsed');
+
+  const searchForm = document.getElementById('search-form');
+  const artistInput = document.getElementById('artist-input');
+  const songInput = document.getElementById('song-input');
+  const albumCover = document.getElementById('cover-image');
+  const homeLink = document.getElementById('home-link');
+  const playlistBtn = document.getElementById('add-to-playlist');
+});
+
 // Home link (Click 'Musiqale' to refresh page)
 document.getelementbyid("home-link").addEventListener("click", (e) => {
     e.preventDefault();
