@@ -73,24 +73,41 @@ document.querySelectorAll("#most-popular li").forEach((songItem) => {
       fetchLyrics(artist, title);
     }
   });
+
+  // Styling for clickable songs
+  songItem.style.cursor = "pointer";
+  songItem.classList.add("hover:scale-105", "transition", "duration-200");
 });
 
 // Event listener to add song/artist to playlist display
 document.getElementById("add-to-playlist").addEventListener("click", () => {
-    const playlistInput = document.getElementById("playlist-input");
-    const newItemText = playlistInput.value.trim();
+  const playlistInput = document.getElementById("playlist-input");
+  const newItemText = playlistInput.value.trim();
 
-    // Check if user typed, create a new list and add item
-    if (newItemText) {
-        const newLi = document.createElement("li");
-        newLi.innerText = newItemText;
-        document.getElementById("playlist-display").appendChild(newLi);
+  if (newItemText) {
+    const newLi = document.createElement("li");
+    newLi.style.cursor = "pointer";
+    newLi.classList.add("hover:scale-105", "transition", "duration-200");
+    newLi.innerText = newItemText;
 
-        // Clear input field after adding or show message if input was empty
-        playlistInput.value = "";
-    } else {
-        alert("Please enter a song or artist name before adding to playlist")
-    }
+    // Make the playlist item clickable
+    newLi.classList.add("cursor-pointer", "hover:text-yellow-300");
+
+    newLi.addEventListener("click", () => {
+      const [title, artist] = newItemText.split(" - ");
+
+      if (artist && title) {
+        fetchLyrics(artist.trim(), title.trim());
+      } else {
+        alert("Please add song and artist in this format: Song - Artist");
+      }
+    });
+
+    document.getElementById("playlist-display").appendChild(newLi);
+    playlistInput.value = "";
+  } else {
+    alert("Please enter a song and artist name like this: Song - Artist");
+  }
 });
 
 // Function to rotate cover image
