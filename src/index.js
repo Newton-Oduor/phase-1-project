@@ -9,10 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const albumCover = document.getElementById('cover-image');
   const homeLink = document.getElementById('home-link');
   const playlistBtn = document.getElementById('add-to-playlist');
-});
 
 // Home link (Click 'Musiqale' to refresh page)
-document.getelementbyid("home-link").addEventListener("click", (e) => {
+document.getElementById("home-link").addEventListener("click", (e) => {
     e.preventDefault();
     location.reload();
 });
@@ -31,7 +30,7 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
     }
 
     // Clear input fields after search
-    document.getelementbyid("artist-input").value = "";
+    document.getElementById("artist-input").value = "";
     document.getElementById("song-input").value = "";
 });
 
@@ -57,8 +56,8 @@ function fetchLyrics(artist, song) {
 
 // Function to display lyrics & hide most popular section
 function displayLyrics(lyricsText) {
-    document.getelementbyid("most-popular").classList.add("hidden"); // Hide most popular section
-    document.getelementbyid("lyrics-section").classList.remove("hidden"); // Show lyrics section
+    document.getElementById("most-popular").classList.add("hidden"); // Hide most popular section
+    document.getElementById("lyrics-section").classList.remove("hidden"); // Show lyrics section
     document.getElementById("lyrics-display").innerText = lyricsText; // Display the fetched lyrics
 }
 
@@ -109,3 +108,5 @@ function rotateCoverImage() {
 
 // Rotate images every 5 seconds (5000ms)
 setInterval(rotateCoverImage, 5000); 
+
+});
