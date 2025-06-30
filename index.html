@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0" /> 
     <title>Musiqale - Song Lyrics Finder</title>
-    <script>https://cdn.tailwindcss.com</script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
@@ -15,6 +15,79 @@
       <img src="/pics/music logo.png" alt="Musiqale Logo" class="h-8 w-8" />
       <span class="text-2xl font-bold">Musiqale</span>
     </div>
+
+    <!-- Search Form -->
+    <form id="search-form" class="flex space-x-2">
+      <input type="text" id="artist-input" placeholder="Artist" required class="px-3 py-1 rounded bg-gray-800 text-white focus:outline-none focus:ring focus:ring-yellow-500" />
+      <input type="text" id="song-input" placeholder="Song" required class="px-3 py-1 rounded bg-gray-800 text-white focus:outline-none focus:ring focus:ring-yellow-500" />
+      <button type="submit" class="px-4 py-1 bg-yellow-500 text-black rounded hover:bg-yellow-600">Find Lyrics</button>
+    </form>
+
+    <!-- Login / Sign Up Button -->
+    <button id="login/sign-up-btn" class="ml-4 px-4 py-1 bg-green-500 text-black rounded hover:bg-green-600">Login / Sign up</button>
+  </nav>
+
+  <!--Categories section-->
+  <section class="text-center py-4 bg-gray-800">
+  <p class="text-green-300 text-lg font-semibold tracking-wide">
+    Find all your favorite lyrics from Hip Hop, Rap, Reggae, Trap, RnB, Soul, Genge, Arbatone, Afrobeat, and many more!
+  </p>
+  </section>
+
+  <section id="album-cover" class="px-6 py-4">
+  <img id="cover-image"
+       src="cover1.jpg"
+       alt="Rotating Album Cover"
+       class="w-3/4 h-64 mx-auto object-cover rounded-xl shadow-lg" />
+  </section>
+
+    <!-- Landing Section: Popular Songs -->
+  <section id="most-popular" class="px-6 py-8">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Most Popular</h2>
+  <div class="grid grid-cols-2 gap-0 text-center">
+    <div>
+      <ol class="space-y-2">
+        <li>
+          <span class="text-orange-500 font-bold">1. Changes</span><br>
+          <span class="text-gray-300">Tupac</span>
+        </li>
+        <li>
+          <span class="text-orange-500 font-bold">2. HUMBLE</span><br>
+          <span class="text-gray-300">Kendrick Lamar</span>
+        </li>
+        <li>
+          <span class="text-orange-500 font-bold">3. Super Bass</span><br>
+          <span class="text-gray-300">Nicki Minaj</span>
+        </li>
+        <li>
+          <span class="text-orange-500 font-bold">4. God's Plan</span><br>
+          <span class="text-gray-300">Drake</span>
+        </li>
+      </ol>
+    </div>
+
+    <div>
+      <ol class="space-y-2">
+        <li>
+          <span class="text-orange-500 font-bold">5. Empire State of Mind</span><br>
+          <span class="text-gray-300">Jay-Z</span>
+        </li>
+        <li>
+          <span class="text-orange-500 font-bold">6. Lose Yourself</span><br>
+          <span class="text-gray-300">Eminem</span>
+        </li>
+        <li>
+          <span class="text-orange-500 font-bold">7. Lollipop</span><br>
+          <span class="text-gray-300">Lil Wayne</span>
+        </li>
+        <li>
+          <span class="text-orange-500 font-bold">8. Drop It Like It's Hot</span><br>
+          <span class="text-gray-300">Snoop Dogg</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+  </section>
     
 </body>
 </html>
