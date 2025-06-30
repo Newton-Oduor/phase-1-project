@@ -2,7 +2,7 @@
 
 ## Description
 
-Musiqale is a sleek and interactive single-page web application (SPA) that allows users to search and view song lyrics from their favorite artists. It connects to the free public API *[lyrics.ovh](https://api.lyrics.ovh/v1/)* and uses asynchronous JavaScript (Fetch API) to retrieve lyrics data in JSON format.
+Musiqale is a sleek and interactive single-page web application (SPA) that allows users to search and view song lyrics from their favorite artists. It connects to the free public API *[lyrics.ovh](https://lyrics.ovh/)* and uses asynchronous JavaScript (Fetch API) to retrieve lyrics data in JSON format.
 
 ### Users can
 
@@ -40,8 +40,6 @@ View Musiqale on GitHub Pages:
 pgsql
 
 ```javascript
-Copy
-Edit
 ├── index.html
 ├── src
 │   └── index.js
@@ -75,7 +73,7 @@ git clone [git@github.com:Newton-Oduor/phase-1-project.git](git@github.com:Newto
 HTML5 Page - structure
 TailwindCSS CDN - Styling and responsiveness
 JavaScript (Vanilla) - Interactivity and API calls
-[Lyrics.ovh API](https://api.lyrics.ovh/v1/) - Public API for song lyrics
+[Lyrics.ovh API](https://lyrics.ovh/) - Public API for song lyrics
 Git / GitHub - Version control and deployment
 
 ## ✅ Tailwind CSS Setup
