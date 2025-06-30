@@ -1,4 +1,4 @@
-# 🎵 Musiqale:Song Lyrics Finder🎵
+# 🎵 Musiqale - Song Lyrics Finder🎵
 
 ## Description
 
@@ -24,9 +24,9 @@ View Musiqale on GitHub Pages:
 |Feature|Description|
 |:------|:----------|
 | API Integration | Fetches lyrics from the public Lyrics.ovh API asynchronously in JSON |
-|3 Different Event Listeners|DOMContentLoaded to ensure full HTML load|
-|3 Different Event Listeners|click on most popular and playlist songs|
-|3 Different Event Listeners|submit on the search form|
+|Event Listener No. 1|DOMContentLoaded to ensure full HTML load|
+|Event Listener No. 2|click on most popular and playlist songs|
+|Event Listener No. 3|submit on the search form|
 |Array Iteration|Uses .forEach() to add click event listeners on the most popular song list|
 |Responsive Design|Styled using TailwindCSS for responsiveness and aesthetics|
 |Playlist Creation|Allows users to build their own playlist and click on playlist items for lyrics|
