@@ -71,4 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+    // 
+    function addNewSong(song) {
+    fetch(baseURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(song)
+    })
+      .then(response => response.json())
+      .then(() => {
+        fetchSongs();
+        songForm.reset();
+      })
+      .catch(error => console.error('Error adding song:', error));
+  }
+
 });
