@@ -71,12 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-    // 
+    // Add a new song to the JSON server db & reloads list
     function addNewSong(song) {
     fetch(baseURL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(song)
+      headers: { 'Content-Type': 'application/json' }, // Tells server that data is in JSON format
+      body: JSON.stringify(song) // The song object is turned into a JSON string using to be sent to the server.
     })
       .then(response => response.json())
       .then(() => {
@@ -84,6 +84,24 @@ document.addEventListener('DOMContentLoaded', () => {
         songForm.reset();
       })
       .catch(error => console.error('Error adding song:', error));
+  }
+
+    // Updates (edits) a song on the JSON server db
+    function updateSong(id, updatedSong) {
+    fetch(`${baseURL}/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedSong)
+    })
+      .then(response => response.json())
+      .then(() => {
+        fetchSongs();
+        songForm.reset();
+        formTitleEl.textContent = 'Add New Song';
+        submitButton.textContent = 'Add Song';
+        isEditing = false;
+      })
+      .catch(error => console.error('Error updating song:', error));
   }
 
 });
