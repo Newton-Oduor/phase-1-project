@@ -2,15 +2,14 @@
 
 ## Description
 
-Musiqale is a sleek and interactive single-page web application (SPA) that allows users to search and view song lyrics from their favorite artists. It connects to the free public API *[lyrics.ovh](https://lyrics.ovh)* and uses asynchronous JavaScript (Fetch API) to retrieve lyrics data in JSON format.
+Musiqale is a sleek and interactive Single Page Application (SPA) that allows users to search and view song lyrics by their favorite artists. It uses asynchronous JavaScript (fetch) to retrieve lyrics from a local db.json file powered by json-server and dynamically updates the page without reloads..
 
 ### Users can
 
 * Search for lyrics by artist and song title
-* View lyrics on the same page dynamically (without reloads)
-* See a rotating album cover section featuring 3 popular music images
-* Explore a Most Popular Songs list (8 famous songs across genres)
-* Add songs to a custom Playlist and click on saved playlist items to fetch lyrics
+* View lyrics instantly without reloading the page
+* Add new songs to a central song list
+* Edit or delete existing songss
 * Enjoy a responsive TailwindCSS-styled layout with mobile-friendly sections
 * Return to the home (default) state by clicking the Musiqale logo
 
@@ -23,15 +22,14 @@ View Musiqale on GitHub Pages:
 
 |Feature|Description|
 |:------|:----------|
-| API Integration | Fetches lyrics from the public Lyrics.ovh API asynchronously in JSON |
+| Local JSON Server | Uses json-server to store and manage song lyrics data |
 |Event Listener No. 1|DOMContentLoaded to ensure full HTML load|
-|Event Listener No. 2|click on most popular and playlist songs|
-|Event Listener No. 3|submit on the search form|
-|Array Iteration|Uses .forEach() to add click event listeners on the most popular song list|
-|Responsive Design|Styled using TailwindCSS for responsiveness and aesthetics|
-|Playlist Creation|Allows users to build their own playlist and click on playlist items for lyrics|
-|Album Cover Rotation|JavaScript-powered image rotator showing 3 different album covers at 5-second intervals|
-|Form Validation and Reset|Validates form inputs and clears them after submission|
+|Event Listener No. 2|click on song items to display lyrics|
+|Event Listener No. 3|submit on the form to add/edit/search songs|
+|Array Iteration|.forEach() used to render and attach events to songs|
+|Responsive Design|TailwindCSS styling for mobile and desktop views|
+|Song Management|Add, edit, and delete songs from the database|
+|Form Handling|Input validation and form reset after submission|
 |Single Page App (SPA)|All actions and views happen on a single HTML page, with DOM manipulation|
 |Back to Home|Clicking the Musiqale logo refreshes the page to its original state (soft reload)|
 
@@ -43,10 +41,7 @@ View Musiqale on GitHub Pages:
 │   └── index.js
 ├── pics
 │   └── music-logo.png
-├── rotating covers
-│   ├── cover1.jpg
-│   ├── cover2.jpg
-│   └── cover3.jpg
+├── db.json
 ├── README.md
 ```
 
@@ -60,18 +55,20 @@ git clone [git@github.com:Newton-Oduor/phase-1-project.git](git@github.com:Newto
 
 2., Open the project folder in VS Code or any code editor.
 
-3., Start a live server or open index.html directly in your browser.
+3., Run json-server --watch db.json to start the local server
 
-4., Ensure your internet connection works (Tailwind CDN and Lyrics API require it).
+4., Open index.html in a browser or use a Live Server extension.
 
-5., You can deploy the project on GitHub Pages for grading.
+5., Ensure internet connection for Tailwind CDN to load properly
+
+6., All actions will be handled on your local machine
 
 ## 💻 Technologies Used
 
 HTML5 Page - structure
-TailwindCSS CDN - Styling and responsiveness
-JavaScript (Vanilla) - Interactivity and API calls
-[Lyrics.ovh API](https://lyrics.ovh) - Public API for song lyrics
+TailwindCSS CDN - Styling and layout
+JavaScript (Vanilla) - Logic and DOM manipulation
+JSON Server - Local backend API for lyrics storage
 Git / GitHub - Version control and deployment
 
 ## ✅ Tailwind CSS Setup
@@ -88,15 +85,15 @@ For more on Tailwind:
 
 ## 📌 Future Improvements
 
-* Add user authentication for saved playlists
+* Add user authentication for personalized playlists
 
-* Use a database (json-server or Firebase) for playlist persistence
+* Replace local JSON server with Firebase or another cloud backend
 
-* Add artist auto-suggestions while typing
+* Add real-time suggestions while typing
 
-* Integrate album art APIs for dynamic covers
+* Use a lyrics API like Lyrics.ovh for dynamic data
 
-* Improve error handling with custom messages and animations
+* Add error messages, loading indicators, and animations
 
 ## 📜 License
 
@@ -105,7 +102,7 @@ Feel free to fork and improve it.*
 
 ## 📝Acknowledgments
 
-[Lyrics.ovh API](https://lyrics.ovh)
+json-server (Fake REST API)
 
 [Tailwind CSS](https://cdn.tailwindcss.com)
 
