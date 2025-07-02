@@ -3,12 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   console.log('DOM fully loaded and parsed');
 
-  const searchForm = document.getElementById('search-form');
-  const artistInput = document.getElementById('artist-input');
-  const songInput = document.getElementById('song-input');
-  const albumCover = document.getElementById('cover-image');
-  const homeLink = document.getElementById('home-link');
-  const playlistBtn = document.getElementById('add-to-playlist');
+  const songListEl = document.getElementById('song-list');
+  const songTitleEl = document.getElementById('song-title');
+  const songArtistEl = document.getElementById('song-artist');
+  const songLyricsEl = document.getElementById('song-lyrics');
+  const editDeleteButtonsEl = document.getElementById('edit-delete-buttons');
 
 // Home link (Click 'Musiqale' to refresh page)
 document.getElementById("home-link").addEventListener("click", (e) => {
