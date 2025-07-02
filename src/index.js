@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSongId = null // To store ID for currently selected song 
   let isEditing = false // To track whether the form is being used to add a new song or edit an existing one
 
+  const baseURL = 'http://localhost:3000/songs'
+
 
 
 });
