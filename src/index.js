@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     songListEl.innerHTML = '';
     songs.forEach(song => {
       const li = document.createElement('li');
-      li.className = 'p-2 bg-gray-700 rounded hover:bg-gray-600 cursor-pointer';
+      li.className = 'p-2 text-black font-bold bg-gray-600 rounded hover:bg-gray-500 cursor-pointer';
       li.textContent = `${song.title} - ${song.artist}`;
       li.addEventListener('click', () => displaySong(song));
       songListEl.appendChild(li);
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     songArtistEl.textContent = `By: ${song.artist}`;
     songLyricsEl.textContent = song.lyrics;
     editDeleteButtonsEl.classList.remove('hidden');
-    currentSongId = song.id;
-    isEditing = false;
+    currentSongId = song.id; // Saves the song’s unique ID from the database in a variable
+    isEditing = false; // Shows that we are just displaying and not editing
   }
 
 
