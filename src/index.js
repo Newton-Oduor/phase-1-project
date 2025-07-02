@@ -170,4 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
   });
+
+  // Home link event listener (to reset page when clicked)
+  document.getElementById('home-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  fetchSongs();          // Reload all songs
+  resetDisplay();        // Clear lyrics section
+  searchInput.value = ''; // Clear search
+  })
 })
