@@ -33,6 +33,17 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Error fetching songs:', error))
   }
 
+    function renderSongList(songs) {
+    songListEl.innerHTML = '';
+    songs.forEach(song => {
+      const li = document.createElement('li');
+      li.className = 'p-2 bg-gray-700 rounded hover:bg-gray-600 cursor-pointer';
+      li.textContent = `${song.title} - ${song.artist}`;
+      li.addEventListener('click', () => displaySong(song));
+      songListEl.appendChild(li);
+    });
+  }
+
 
 
 });
