@@ -127,4 +127,6 @@ function rotateCoverImage() {
 // Rotate images every 5 seconds (5000ms)
 setInterval(rotateCoverImage, 5000); 
 
+
+
 });

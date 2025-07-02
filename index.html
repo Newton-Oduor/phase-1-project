@@ -30,9 +30,20 @@
   <main class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
 
     <!--Left Column: Song List-->
-    <section>
-
+    <section id="song-list-section" class="bg-gray-800 p-4 rounded">
+      <h2 class="text-xl font-semibold mb-2">Available Songs</h2>
+      <ul id="song-list" class="space-y-2">
+        <!-- Available songs on the db.json will be loaded here by JS -->
+      </ul>
     </section>  
+
+    <!--Middle Column: Lyrics Display-->
+    <section id="lyrics-display-section" class="bg-gray-800 p-4 rounded md:col-span-2">
+      <h2 id="song-title" class="text-2xl font-bold">Select a song to display lyrics</h2>
+      <h3 id="song-artist" class="text-lg italic mb-2"></h3>
+      <pre id="song-lyrics" class="whitespace-pre-wrap"></pre>
+
+    <!--Edit & delete Button-->  
 
 
   <!-- Footer Social Links -->
