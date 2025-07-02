@@ -18,8 +18,7 @@
 
     <!-- Search Form -->
     <form id="search-form" class="flex space-x-2">
-      <input type="text" id="artist-input" placeholder="Artist" required class="px-3 py-1 rounded bg-gray-800 text-white focus:outline-none focus:ring focus:ring-yellow-500" />
-      <input type="text" id="song-input" placeholder="Song" required class="px-3 py-1 rounded bg-gray-800 text-white focus:outline-none focus:ring focus:ring-yellow-500" />
+      <input type="text" id="artist-title-input" placeholder="Type artist name or song title" required class="px-3 py-1 rounded bg-gray-800 text-white focus:outline-none focus:ring focus:ring-yellow-500" />
       <button type="submit" class="px-4 py-1 bg-yellow-500 text-black rounded hover:bg-yellow-600">Find Lyrics</button>
     </form>
 
@@ -27,101 +26,14 @@
     <button id="login-sign-up-btn" class="ml-4 px-4 py-1 bg-green-500 text-black rounded hover:bg-green-600">Login / Sign up</button>
   </nav>
 
-  <!--Categories section-->
-  <section class="text-center py-4 bg-gray-800">
-  <p class="text-green-300 text-lg font-semibold tracking-wide">
-    Find and add your favorite lyrics from Hip Hop, Rap, Reggae, Trap, RnB, Soul, Genge, Arbatone, Afrobeat, and many more!
-  </p>
-  </section>
+  <!--Main section-->
+  <main class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
 
-  <section id="album-cover" class="px-6 py-4">
-  <img id="cover-image"
-       src="rotating covers/cover1.jpg"
-       alt="Rotating Album Cover"
-       class="w-3/4 h-64 mx-auto object-cover rounded-xl shadow-lg" />
-  </section>
+    <!--Left Column: Song List-->
+    <section>
 
-    <!-- Most Popular Songs section (Default visible) -->
-  <section id="most-popular" class="px-6 py-8">
-    <h2 class="text-2xl font-semibold mb-4 text-center">Most Popular</h2>
-  <div class="grid grid-cols-2 gap-0 text-center">
-    <div>
-      <ol class="space-y-2">
-        <li>
-          <span class="text-orange-500 font-bold">1. Changes</span><br>
-          <span class="text-gray-300">Tupac</span>
-        </li>
-        <li>
-          <span class="text-orange-500 font-bold">2. HUMBLE</span><br>
-          <span class="text-gray-300">Kendrick Lamar</span>
-        </li>
-        <li>
-          <span class="text-orange-500 font-bold">3. Super Bass</span><br>
-          <span class="text-gray-300">Nicki Minaj</span>
-        </li>
-        <li>
-          <span class="text-orange-500 font-bold">4. God's Plan</span><br>
-          <span class="text-gray-300">Drake</span>
-        </li>
-      </ol>
-    </div>
+    </section>  
 
-    <div>
-      <ol class="space-y-2">
-        <li>
-          <span class="text-orange-500 font-bold">5. Empire State of Mind</span><br>
-          <span class="text-gray-300">Jay-Z</span>
-        </li>
-        <li>
-          <span class="text-orange-500 font-bold">6. Lose Yourself</span><br>
-          <span class="text-gray-300">Eminem</span>
-        </li>
-        <li>
-          <span class="text-orange-500 font-bold">7. Lollipop</span><br>
-          <span class="text-gray-300">Lil Wayne</span>
-        </li>
-        <li>
-          <span class="text-orange-500 font-bold">8. Drop It Like It's Hot</span><br>
-          <span class="text-gray-300">Snoop Dogg</span>
-        </li>
-      </ol>
-    </div>
-  </div>
-  </section>
-
-    <!-- Lyrics Display Section (Hidden by default) -->
-  <section id="lyrics-section" class="py-6 bg-gray-900 text-center hidden">
-    <h2 class="text-2xl font-semibold mb-4 text-yellow-300">Lyrics</h2>
-    <div id="lyrics-display" 
-       class="w-2/3 mx-auto bg-gray-700 text-white p-4 rounded-md shadow">
-    <p>Select a song to view lyrics...</p>
-    </div>
-  </section>
-
-    <!-- Playlist Creation Section -->
-  <section id="playlist-section" class="py-6 bg-gray-800 text-center">
-    <h2 class="text-2xl font-semibold mb-4">Create Your Favorite Playlist</h2>
-     
-    <div class="flex justify-center space-x-2 mb-4">
-      <input id="playlist-input" 
-           type="text" 
-           placeholder="Song name - artist name" 
-           class="px-4 py-2 inline-block w-auto rounded-md border border-gray-300 focus:outline-none text-black" />
-      <input id="add-lyrics" 
-           type="text" 
-           placeholder="Add Lyrics" 
-           class="px-4 py-2 inline-block w-auto rounded-md border border-gray-300 focus:outline-none text-black" />     
-
-      <button id="add-to-playlist" 
-            class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
-      Add to Playlist
-    </button>
-    </div>
-
-    <ul id="playlist-display" class="space-y-2">
-      <!-- User-added playlist items will appear here -->
-    </ul>
-  </section>
 
   <!-- Footer Social Links -->
   <footer id="social-footer" class="text-center py-6 bg-black text-white">
