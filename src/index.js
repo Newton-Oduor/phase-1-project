@@ -34,13 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
     // Displays the list of songs in the db.json
-    function renderSongList(songs) {
+    function renderSongList(songs, isFiltered = false) {
     songListEl.innerHTML = '';
     songs.forEach(song => {
       const li = document.createElement('li');
       li.className = 'p-2 text-black font-bold bg-gray-600 rounded hover:bg-gray-500 cursor-pointer';
       li.textContent = `${song.title} - ${song.artist}`;
-      li.addEventListener('click', () => displaySong(song));
+      li.addEventListener('click', () => {
+        displaySong(song);
+        if (isFiltered) {
+          fetchSongs();
+          searchInput.value = '';
+        }
+      })
       songListEl.appendChild(li);
     });
   }
@@ -55,6 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
     isEditing = false; // Shows that we are just displaying and not editing
   }
 
+  // Event listener for edit
+  document.getElementById('edit-button').addEventListener('click', () => {
+  if (currentSongId) {
+    // Fill the form with current song data
+    artistInput.value = songArtistEl.textContent.replace('By: ', '');
+    titleInput.value = songTitleEl.textContent;
+    lyricsInput.value = songLyricsEl.textContent;
+
+    // Change form labels
+    formTitleEl.textContent = 'Edit Song';
+    submitButton.textContent = 'Update Song';
+    isEditing = true;
+  }
+});
+  
       // Adding event listener (Handle form submit) to either add or edit song
   songForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -114,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error deleting song:', error));
     }
+  })
 
     // Function to reset display
     function resetDisplay() {
@@ -142,11 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         if (filtered.length > 0) {
-          renderSongList(filtered); // If yes. it shows only those songs by calling renderSongList(filtered)
+          renderSongList(filtered, true); // If yes. it shows only those songs by calling renderSongList(filtered)
         } else {
           songListEl.innerHTML = '<li>No matching songs found.</li>'; 
         }
       });
   });
-});
 })
