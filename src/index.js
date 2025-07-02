@@ -128,4 +128,25 @@ document.addEventListener('DOMContentLoaded', () => {
     isEditing = false;
   }
 
+    // Adding event listener to Find Lyrics button (to find lyrics by song or artist name)
+  searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = searchInput.value.toLowerCase(); // turns value to lowercase
+
+    fetch(baseURL)
+      .then(response => response.json())
+      .then(songs => {
+        const filtered = songs.filter(song => // Checks if the title or artist is indicated in the search bar
+          song.title.toLowerCase().includes(query) ||
+          song.artist.toLowerCase().includes(query) 
+        );
+
+        if (filtered.length > 0) {
+          renderSongList(filtered); // If yes. it shows only those songs by calling renderSongList(filtered)
+        } else {
+          songListEl.innerHTML = '<li>No matching songs found.</li>'; 
+        }
+      });
+  });
+
 });
