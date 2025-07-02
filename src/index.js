@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Error fetching songs:', error))
   }
 
+    // Displays the list of songs in the db.json
     function renderSongList(songs) {
     songListEl.innerHTML = '';
     songs.forEach(song => {
@@ -42,6 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
       li.addEventListener('click', () => displaySong(song));
       songListEl.appendChild(li);
     });
+  }
+    
+    // Shows the songs details in the centre and makes Edit/Delete options visible
+    function displaySong(song) {
+    songTitleEl.textContent = song.title;
+    songArtistEl.textContent = `By: ${song.artist}`;
+    songLyricsEl.textContent = song.lyrics;
+    editDeleteButtonsEl.classList.remove('hidden');
+    currentSongId = song.id;
+    isEditing = false;
   }
 
 
