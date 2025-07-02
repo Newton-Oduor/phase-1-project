@@ -24,6 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const baseURL = 'http://localhost:3000/songs'
 
+  fetchSongs(); // Fetch all songs on start
+
+  function fetchSongs() {
+    fetch(baseURL)
+    .then(response => response.json())
+    .then(songs => renderSongList(songs))
+    .catch(error => console.error('Error fetching songs:', error))
+  }
+
 
 
 });
