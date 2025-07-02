@@ -36,18 +36,18 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
 
 // function to fetch lyrics from API and show them on the web page
 function fetchLyrics(artist, song) {
-    const apiurl = `https://api.lyrics.ovh/v1/${artist}/${song}`;
+    const apiurl = `http://localhost:3000/songs?artist=${encodeURIComponent(artist)}&title=${encodeURIComponent(song)}`;
 
     // Make the request from API and display lyrics, 
     fetch(apiurl)
-      .then(response => response.json())
-      .then(data => {
-        if (data.lyrics) {
-            displayLyrics(data.lyrics);
-        } else {
-          displayLyrics("Lyrics for this song not available") // If not found, display lyrics not found
-        }
-      })
+    .then(response => response.json())
+    .then(data => {
+      if (data.length > 0) {
+        displayLyrics(data[0].lyrics);
+      } else {
+        displayLyrics("Lyrics not found in local database.");
+      }
+    })
       .catch(error => {
         console.error("Error fetching Lyrics", error);
         displayLyrics("An error occured while fetching lyrics"); // Catch any error during the process and display error message
@@ -56,6 +56,7 @@ function fetchLyrics(artist, song) {
 
 // Function to display lyrics & hide most popular section
 function displayLyrics(lyricsText) {
+    console.log("Display Lyrics", lyricsText)
     document.getElementById("most-popular").classList.add("hidden"); // Hide most popular section
     document.getElementById("lyrics-section").classList.remove("hidden"); // Show lyrics section
     document.getElementById("lyrics-display").innerText = lyricsText; // Display the fetched lyrics
