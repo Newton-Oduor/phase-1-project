@@ -16,7 +16,7 @@ document.getElementById("home-link").addEventListener("click", (e) => {
     location.reload();
 });
 
-// Find lyrics by artist and song (The API can only find lyrics by both artist and song)
+// Find displayed lyrics by artist and song 
 document.getElementById("search-form").addEventListener("submit", (e) => {
     e.preventDefault(); 
 
@@ -34,11 +34,11 @@ document.getElementById("search-form").addEventListener("submit", (e) => {
     document.getElementById("song-input").value = "";
 });
 
-// function to fetch lyrics from API and show them on the web page
+// function to fetch lyrics from db,json
 function fetchLyrics(artist, song) {
     const apiurl = `http://localhost:3000/songs?artist=${encodeURIComponent(artist)}&title=${encodeURIComponent(song)}`;
 
-    // Make the request from API and display lyrics, 
+    // Make the request and display lyrics, 
     fetch(apiurl)
     .then(response => response.json())
     .then(data => {
