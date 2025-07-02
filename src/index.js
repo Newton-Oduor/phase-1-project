@@ -55,6 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
     isEditing = false; // Shows that we are just displaying and not editing
   }
 
+      // Adding event listener (Handle form submit) to either add or edit song
+  songForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newSong = {
+      artist: artistInput.value,
+      title: titleInput.value,
+      lyrics: lyricsInput.value
+    };
 
+    if (isEditing && currentSongId !== null) {
+      updateSong(currentSongId, newSong);
+    } else {
+      addNewSong(newSong);
+    }
+  });
 
 });
