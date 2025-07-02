@@ -115,4 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error deleting song:', error));
     }
 
+    // Function to reset display
+    function resetDisplay() {
+    songTitleEl.textContent = 'Select a song to display lyrics';
+    songArtistEl.textContent = '';
+    songLyricsEl.textContent = '';
+    editDeleteButtonsEl.classList.add('hidden');
+    songForm.reset();
+    formTitleEl.textContent = 'Add New Song';
+    submitButton.textContent = 'Add Song';
+    currentSongId = null;
+    isEditing = false;
+  }
+
 });
