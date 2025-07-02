@@ -9,6 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const songLyricsEl = document.getElementById('song-lyrics');
   const editDeleteButtonsEl = document.getElementById('edit-delete-buttons');
 
+  const formTitleEl = document.getElementById('form-title');
+  const artistInput = document.getElementById('artist-input');
+  const titleInput = document.getElementById('title-input');
+  const lyricsInput = document.getElementById('lyrics-input');
+  const songForm = document.getElementById('song-form');
+  const submitButton = document.getElementById('submit-button');
+  const searchForm = document.getElementById('search-form');
+  const searchInput = document.getElementById('artist-title-input');
+
 // Home link (Click 'Musiqale' to refresh page)
 document.getElementById("home-link").addEventListener("click", (e) => {
     e.preventDefault();
