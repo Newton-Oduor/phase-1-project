@@ -96,12 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => response.json())
       .then(() => {
         fetchSongs();
-        songForm.reset();
-        formTitleEl.textContent = 'Add New Song';
-        submitButton.textContent = 'Add Song';
-        isEditing = false;
+        songForm.reset(); // Reload the song list with the new data
+        formTitleEl.textContent = 'Add New Song'; // Switch form title back
+        submitButton.textContent = 'Add Song'; // Switch button text back
+        isEditing = false; // Exit edit mode
       })
       .catch(error => console.error('Error updating song:', error));
   }
+
+    // Event listener for delete button
+    document.getElementById('delete-button').addEventListener('click', () => {
+    if (currentSongId) {
+      fetch(`${baseURL}/${currentSongId}`, { method: 'DELETE' })
+        .then(() => {
+          fetchSongs();
+          resetDisplay();
+        })
+        .catch(error => console.error('Error deleting song:', error));
+    }
 
 });
